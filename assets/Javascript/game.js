@@ -24,6 +24,12 @@ document.onkeyup = function(event){
     var guessesLeft = document.getElementById("numberGuesses");
     guessesLeft.textContent = remainingGuesses;
 
+    function gameReset(){
+        wordPicked;
+        triedCharacters = [];
+        remainingGuesses = 12;
+    }
+
 
 
 
@@ -34,6 +40,7 @@ document.onkeyup = function(event){
     }
 
     if (remainingGuesses === 0){
+        gameReset()
         alert("Game Over! You ran out of guesses.")
     }
 
@@ -42,16 +49,18 @@ document.onkeyup = function(event){
         if (word[i] === userGuess){
                 answer[i] = userGuess;
                 currentWord.textContent = answer;
-        } else {
-                triedCharacters[i] = userGuess;
-                badCharacters.textContent = triedCharacters;            
-        }
+        }           
+    }
         
 
-    }
+
     if (word.indexOf(userGuess) === -1){
         -- remainingGuesses;
-    } 
+        triedCharacters.push(userGuess);
+        badCharacters.textContent = triedCharacters;
+    }
+
+
         
 
 
