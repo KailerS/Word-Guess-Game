@@ -1,6 +1,7 @@
 var wordBank = ["trout", "bellinger", "yelich", "pujols", "haniger", "goldschmidt", "molina"];
-var workingCharacters = ["a","b", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
+var workingCharacters = ["a","b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
 var wordPicked = wordBank[Math.floor(Math.random() * wordBank.length)];
+var word = wordPicked.split("");
 var answer = [];
 for (var i = 0; i < wordPicked.length; i++){
     answer[i] = "-";
@@ -8,18 +9,24 @@ for (var i = 0; i < wordPicked.length; i++){
 var wins = 0;
 var remainingGuesses = 12;
 var winsText = document.getElementById("winsText");
-var guessesLeft = document.getElementById("numberGuesses");
+// var guessesLeft = document.getElementById("numberGuesses");
 var currentWord = document.getElementById("currentWord");
 currentWord.textContent = answer;
-guessesLeft.textContent = remainingGuesses;
+// guessesLeft.textContent = remainingGuesses;
 var triedCharacters = [];
-var badCharacters = document.getElementById("lettersGuessed")
+var badCharacters = document.getElementById("lettersGuessed");
+badCharacters.textContent = triedCharacters;
 
 
 document.onkeyup = function(event){  
     var userGuess = event.key;
 
-    var wordPicked = wordBank[Math.floor(Math.random() * wordBank.length)];
+    var guessesLeft = document.getElementById("numberGuesses");
+    guessesLeft.textContent = remainingGuesses;
+
+
+
+
       
               
     if (workingCharacters.indexOf(userGuess) === -1 ){
@@ -31,13 +38,20 @@ document.onkeyup = function(event){
     }
 
 
-    for(var i = 0; i < wordPicked.length; i++){
-        if (wordPicked[i] === userGuess){
+    for(var i = 0; i < word.length; i++){
+        if (word[i] === userGuess){
                 answer[i] = userGuess;
-                currentWord.textContent = answer
+                currentWord.textContent = answer;
+        } else {
+                triedCharacters[i] = userGuess;
+                badCharacters.textContent = triedCharacters;            
         }
+        
 
     }
+    if (word.indexOf(userGuess) === -1){
+        -- remainingGuesses;
+    } 
         
 
 
