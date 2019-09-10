@@ -16,8 +16,7 @@ var badCharacters = document.getElementById("lettersGuessed");
 badCharacters.textContent = triedCharacters;
 var guessesLeft = document.getElementById("numberGuesses");
 guessesLeft.textContent = remainingGuesses;
-
-
+var displayName = document.getElementById("playerName")
 
 
 
@@ -69,12 +68,11 @@ document.onkeyup = function(event){
     if (answer.join("") === wordPicked){
         alert("Congratulations you've won!")
         currentWord.textContent = answer;
-        // gameReset()
+        wins ++;
+        winsText.textContent = "Wins: " + wins;
+        displayName.textContent = "Last player guessed correctly: " + wordPicked;  
+        gameReset();
     }
-
     
 }
 
-console.log(wordPicked);
-console.log(answer);
-console.log(word);
