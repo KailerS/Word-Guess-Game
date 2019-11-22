@@ -62,7 +62,7 @@ document.onkeyup = function(event){
     if (remainingGuesses === 0){
         gameReset();
         alert("Game Over! You ran out of guesses.");
-        document.getElementById("picture").src="./assets/Images/Mlb.jpg";
+        document.getElementById("picture").src="./assets/Images/MLB.jpg";
     }
 
 
@@ -72,7 +72,7 @@ document.onkeyup = function(event){
         wins ++;
         winsText.textContent = "Wins: " + wins;
         displayName.textContent = "Last player guessed correctly: " + wordPicked;
-        document.getElementById("picture").src="./assets/Images/" + wordPicked + ".jpg";  
+        document.getElementById("picture").src="assets/Images/" + wordPicked + ".jpg";  
         gameReset();
     }
     
