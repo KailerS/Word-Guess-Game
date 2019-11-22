@@ -14,9 +14,10 @@ header, h2 {
 #wordContent {
     float: right;
     border: dashed 2px whitesmoke;
-    padding: 10%;
+    padding: 0 10%;
     margin-right: 8%;
     line-height: 200%;
+    min-height: 592px;
 } 
 #imageHolder {
     float: left;
