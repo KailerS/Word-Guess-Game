@@ -30,10 +30,11 @@ badCharacters.textContent = triedCharacters;
 guessesLeft.textContent = remainingGuesses;
 
 
-
-document.onkeyup = event => {  
+// Watches for the user to press a key
+document.onkeyup = event => {
+    // Stores what letter the user pressed  
     const userGuess = event.key;
-
+    // Clears the game back to a starting point
     const gameReset = () => {
         triedCharacters = [];
         remainingGuesses = 12;
@@ -47,20 +48,19 @@ document.onkeyup = event => {
         guessesLeft.textContent = remainingGuesses;
         badCharacters.textContent = triedCharacters;
     }      
-    
+    // A check to make sure the user presses a letter
     if (workingCharacters.indexOf(userGuess) === -1 ){
         return alert("Enter a valid character");   
     }
     
-    
+    // If the users answer is right display the correct letter
     for(let i = 0; i < word.length; i++){
         if (word[i] === userGuess){
             answer[i] = userGuess;
-            currentWord.textContent = answer.join("");
-            
+            currentWord.textContent = answer.join("");    
         }           
     }   
-    
+    // If users answer is wrong add it to the tried letters and subtract a guess
     if (word.indexOf(userGuess) === -1){
         triedCharacters.push(userGuess);
         badCharacters.textContent = triedCharacters;
@@ -69,21 +69,21 @@ document.onkeyup = event => {
     
     } 
     
-    
+    // When remaining guesses is 0 alert the user
     if (remainingGuesses === 0){
         gameReset();
         alert("Game Over! You ran out of guesses.");
         document.getElementById("picture").src="./assets/Images/MLB.jpg";
     }
 
-
+    // When the user gets the complete word correct alert the user they've won
     if (answer.join("") === wordPicked){
-        alert("Congratulations you've won!")
         currentWord.textContent = answer.join("");
         wins ++;
         winsText.textContent = "Wins: " + wins;
         displayName.textContent = "Last player guessed correctly: " + wordPicked;
         document.getElementById("picture").src="assets/Images/" + wordPicked + ".jpg";  
+        alert("Congratulations you've won!")
         gameReset();
     }
     
