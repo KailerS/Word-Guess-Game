@@ -1,4 +1,5 @@
 body {
+    /* Baseball themed game needs a baseball color */
     background-color: dodgerblue;
     color: antiquewhite;
 }
@@ -12,6 +13,7 @@ header, h2 {
 }
 
 #wordContent {
+    /* Practice using floats */
     float: right;
     border: dashed 2px whitesmoke;
     padding: 0 10%;
@@ -20,13 +22,16 @@ header, h2 {
     min-height: 592px;
 } 
 #imageHolder {
+    /* Practice using floats */
     float: left;
     border: dashed 2px whitesmoke;
     padding: 10%;
     margin-left: 8%;
     padding-bottom: 30.5%;
 }
+/* Lots of changes to keep the borders the same sizes */
 img {
+    /* Makes all images the same size */
     width: 200px;
     height: 200px;
 }
