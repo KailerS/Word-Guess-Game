@@ -1,35 +1,35 @@
-var wordBank = ["trout", "bellinger", "yelich", "pujols", "haniger", "goldschmidt", "molina"];
-var workingCharacters = ["a","b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
-var wordPicked = wordBank[Math.floor(Math.random() * wordBank.length)];
-var word = wordPicked.split("");
-var answer = [];
-for (var i = 0; i < wordPicked.length; i++){
+const wordBank = ["trout", "bellinger", "yelich", "pujols", "haniger", "goldschmidt", "molina"];
+const workingCharacters = ["a","b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
+let wordPicked = wordBank[Math.floor(Math.random() * wordBank.length)];
+let word = wordPicked.split("");
+let answer = [];
+for (let i = 0; i < wordPicked.length; i++){
     answer[i] = "-";
 }
-var wins = 0;
-var remainingGuesses = 12;
-var winsText = document.getElementById("winsText");
-var currentWord = document.getElementById("currentWord");
+let wins = 0;
+let remainingGuesses = 12;
+const winsText = document.getElementById("winsText");
+const currentWord = document.getElementById("currentWord");
 currentWord.textContent = answer.join("");
-var triedCharacters = [];
-var badCharacters = document.getElementById("lettersGuessed");
+let triedCharacters = [];
+const badCharacters = document.getElementById("lettersGuessed");
 badCharacters.textContent = triedCharacters;
-var guessesLeft = document.getElementById("numberGuesses");
+let guessesLeft = document.getElementById("numberGuesses");
 guessesLeft.textContent = remainingGuesses;
-var displayName = document.getElementById("playerName")
+let displayName = document.getElementById("playerName")
 
 
 
-document.onkeyup = function(event){  
-    var userGuess = event.key;
+document.onkeyup = event => {  
+    const userGuess = event.key;
 
-    function gameReset(){
+    const gameReset = () => {
         triedCharacters = [];
         remainingGuesses = 12;
         wordPicked = wordBank[Math.floor(Math.random() * wordBank.length)];
         word = wordPicked.split("");
         answer = [];
-        for (var i = 0; i < wordPicked.length; i++){
+        for (let i = 0; i < wordPicked.length; i++){
             answer[i] = "-";
         }
         currentWord.textContent = answer.join("");
@@ -42,7 +42,7 @@ document.onkeyup = function(event){
     }
     
     
-    for(var i = 0; i < word.length; i++){
+    for(let i = 0; i < word.length; i++){
         if (word[i] === userGuess){
             answer[i] = userGuess;
             currentWord.textContent = answer.join("");
