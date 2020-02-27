@@ -16,7 +16,7 @@ No additional installs need to be made to run this app.
 
 This is the screen you will see when the page first loads:
 
-![Starting Screen](/assets/images/startingScreen.png)
+![Starting Screen](/assets/images/startingscreen.png)
 
 ## Built With 
 * HTML5
