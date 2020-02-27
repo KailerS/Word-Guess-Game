@@ -82,8 +82,7 @@ document.onkeyup = event => {
         wins ++;
         winsText.textContent = "Wins: " + wins;
         displayName.textContent = "Last player guessed correctly: " + wordPicked;
-        document.getElementById("picture").src="assets/Images/" + wordPicked + ".jpg";  
-        alert("Congratulations you've won!")
+        document.getElementById("picture").src="assets/Images/" + wordPicked + ".jpg"; 
         gameReset();
     }
     
