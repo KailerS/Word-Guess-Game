@@ -11,6 +11,13 @@ This app is deployed on GitHub Pages.
 
 ## Installs
 No additional installs need to be made to run this app.
+
+## Screenshots
+
+This is the screen you will see when the page first loads:
+
+![Starting Screen](/assets/images/startingScreen.png)
+
 ## Built With 
 * HTML5
 * JavaScript 
