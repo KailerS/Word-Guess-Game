@@ -16,11 +16,11 @@ No additional installs need to be made to run this app.
 
 This is the screen you will see when the page first loads:
 
-![Starting Screen](/assets/images/startingscreen.png)
+![Starting Screen](/assets/Images/startingscreen.png)
 
 If any keyboard button is pressed that is not a letter an alert will pop up:
 
-![Invalid button](/assets/images/invalidinput.png)
+![Invalid button](/assets/Images/invalidinput.png)
 
 ## Built With 
 * HTML5
