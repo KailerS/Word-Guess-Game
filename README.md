@@ -26,6 +26,16 @@ When you guess letters correct ones will fill in the blanks and wrong ones will 
 
 ![Example Guesses](/assets/Images/guesses.png)
 
+When you guess the player correctly their name and picture will be displayed. Also the win counter increases and a new word is selected:
+
+![Win](/assets/Images/win.png)
+
+When you lose an alert pops up and a new word is selected with the default MLB logo re appearing after closing the alert:
+
+![loss](/assets/Images/loss.png)
+
+![After alert closes loss scren](/assets/Images/loss2.png)
+
 ## Built With 
 * HTML5
 * JavaScript 
