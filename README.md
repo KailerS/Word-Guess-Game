@@ -18,6 +18,10 @@ This is the screen you will see when the page first loads:
 
 ![Starting Screen](/assets/images/startingscreen.png)
 
+If any keyboard button is pressed that is not a letter an alert will pop up:
+
+![Invalid button](/assets/images/invalidinput.png)
+
 ## Built With 
 * HTML5
 * JavaScript 
