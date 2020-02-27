@@ -22,6 +22,10 @@ If any keyboard button is pressed that is not a letter an alert will pop up:
 
 ![Invalid button](/assets/Images/invalidinput.png)
 
+When you guess letters correct ones will fill in the blanks and wrong ones will go in the word bank. Also wrong answers will deplete the remaining guesses.
+
+![Example Guesses](/assets/Images/guesses.png)
+
 ## Built With 
 * HTML5
 * JavaScript 
